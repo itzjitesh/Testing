@@ -2,8 +2,11 @@ import express from "express";
 import { dirname } from 'path';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import route from "./routes/route.js";
 const app = express();
+
+app.use("/home", route);
+
 
 app.set("view engine", "ejs");
 

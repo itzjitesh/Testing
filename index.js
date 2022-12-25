@@ -1,12 +1,20 @@
 import express from "express";
 import { dirname } from 'path';
+import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
 
 app.set("view engine", "ejs");
 
-app.use(express.static("public"));
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+app.set('views', path.join(__dirname,  '/client/views'));
+
+// console.log(__dirname);
+
+// app.use(express.static("public"));
+// app.use(express.static(__dirname + "/client" + "public"));
 
 app.get("/", (req, res)=>{
     

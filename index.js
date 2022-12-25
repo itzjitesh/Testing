@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname,  '/client/views'));
 
 // console.log(__dirname);
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 // app.use(express.static(__dirname + "/client" + "public"));
 
 app.get("/", (req, res)=>{
